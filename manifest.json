@@ -1,0 +1,46 @@
+{
+    "name": "Easyv开发助手",
+    "description": "Easyv开发工具",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "cookies",
+        "activeTab",
+        "tabs",
+        "webRequest"
+    ],
+    "action": {
+        "default_popup": "/src/options/index.html",
+        "default_title":"Easyv开发助手",
+        "default_icon": {
+            "16": "/src/assets/images/app_logo.png",
+            "32": "/src/assets/images/app_logo.png",
+            "48": "/src/assets/images/app_logo.png",
+            "128": "/src/assets/images/app_logo.png"
+        }
+    },
+    "host_permissions": [
+        "*://*.easyv.cloud/"
+    ],
+    "optional_permissions": [
+        "alarms",
+        "background",
+        "clipboardWrite"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.easyv.cloud/*"
+            ],
+            "run_at": "document_end",
+            "js": [
+                "src/assets/scripts/getIndexdDB.js",
+                "src/assets/scripts/screenExport.js"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyV Develop Assistant</title>
+    <script src="../assets/libs/jquery.3.6.0.slim.js"></script>
+    <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
+    <script src="../assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="../utils/utils.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <span>导出本地存储大屏 Layers</span>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <form class="row g-3" id="needs-validation" novalidate>
+                            <div class="col-6">
+                                <label for="validationCustom01" class="form-label">Screen ID</label>
+                                <input type="number" placeholder="大屏ID" class="form-control" id="validationCustom01"
+                                    required>
+                                <div class="invalid-feedback">
+                                    请输入大屏ID
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="validationCustom02" class="form-label">Time</label>
+                                <select class="form-select" placeholder="小时（24小时制）" id="validationCustom02" required>
+                                </select>
+                                <div class="invalid-feedback">
+                                    请选择回滚数据时间点（24小时制）
+                                </div>
+                            </div>
+                            <div id="editor_holder" class="editor_holder col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        数据预览...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col">
+                                        <button class="btn btn-primary" type="submit">导出数据</button>
+                                    </div>
+                                    <div class="col import-data-copy" style="text-align: right;">
+                                        <button type="button" id="import-data-copy-btn" class="btn btn-warning">复
+                                            制</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        清除大屏404组件
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="fetchTestBox">
+                            <button type="button" class="btn btn-info" id="fetchTest">Fetch 测试</button>
+                            <div class="spinner-color" id="spinner-color">
+                                <div class="spinner-border text-primary"  role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
